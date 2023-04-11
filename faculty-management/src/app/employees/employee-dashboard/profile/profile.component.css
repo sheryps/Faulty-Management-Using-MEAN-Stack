@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.container{
+    background-color: #666699;
+}
+.container h2:hover{
+    color: rgb(84, 237, 24);
+}
+.container h4:hover{
+    color: rgb(241, 145, 20);
+}
+
+h1,h2,h4{
+    font-family: 'Poppins', sans-serif;
+}

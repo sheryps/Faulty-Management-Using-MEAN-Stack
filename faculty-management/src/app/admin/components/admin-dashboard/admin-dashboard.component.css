@@ -1,0 +1,16 @@
+.sidebar{
+    min-height: 100vh;
+    overflow: hidden;
+    background-color:#f861f1
+}
+.sidebar a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    display: block !important;
+    cursor:pointer
+}
+.sidebar a:hover{
+    color:rgb(23, 110, 181);
+    transform: scale(1.02);
+}

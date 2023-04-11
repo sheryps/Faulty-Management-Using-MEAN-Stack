@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+          <h2 class="active"> Employee Log-In </h2>
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="https://th.bing.com/th/id/OIP.X4fZUAlXPGi0WWgaZFQE6QHaH9?pid=ImgDet&rs=1" id="icon" alt="User Icon" height="200px"/>
+          </div>
+      
+          <!-- Login Form -->
+          <form [formGroup]="loginForm" (ngSubmit)="employeeLogin()">
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Enter Your Username" formControlName="username">
+            <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched )" class="text-danger">
+                This is required field
+            </div>
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Enter Your Password" formControlName="password">
+            <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched )" class="text-danger">
+                This is required field
+            </div>
+            <input type="submit" class="fadeIn fourth" [disabled]="loginForm.invalid">
+          </form>
+      
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" routerLink="/admin">Are u Admin?</a>
+          </div>
+      
+        </div>
+      </div>
+</div>
+
+

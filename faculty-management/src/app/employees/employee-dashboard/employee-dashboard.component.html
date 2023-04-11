@@ -1,0 +1,139 @@
+<div class="container-fluid p-0 m-0 shadow-lg " style="overflow:hidden">
+    <div class="row">
+        <!-- sidebar -->
+        <div class="col-sm-2 sidebar pe-0 p-3">
+            <a class="p-3 text-primary text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img class="rounded-circle" [src]="image" alt="" width="80px" height="70px"><br><br>
+                <strong>{{user.faculty_name}}</strong>
+            </a>
+            <hr class="text-success" >
+            <a class="p-3" (click)="showProfile()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-people-fill me-3" viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+              </svg>Profile</a>
+            <a class="p-3" (click)="showLeave()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-card-checklist me-3" viewBox="0 0 16 16">
+                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+              </svg>Add Skills</a>
+              <a class="p-3" data-bs-toggle="modal" data-bs-target="#editprofile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="20" height="20" class="me-3"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H322.8c-3.1-8.8-3.7-18.4-1.4-27.8l15-60.1c2.8-11.3 8.6-21.5 16.8-29.7l40.3-40.3c-32.1-31-75.7-50.1-123.9-50.1H178.3zm435.5-68.3c-15.6-15.6-40.9-15.6-56.6 0l-29.4 29.4 71 71 29.4-29.4c15.6-15.6 15.6-40.9 0-56.6l-14.4-14.4zM375.9 417c-4.1 4.1-7 9.2-8.4 14.9l-15 60.1c-1.4 5.5 .2 11.2 4.2 15.2s9.7 5.6 15.2 4.2l60.1-15c5.6-1.4 10.8-4.3 14.9-8.4L576.1 358.7l-71-71L375.9 417z"/></svg>Edit Profile</a>
+              <a class="p-3" data-bs-toggle="modal" data-bs-target="#changepass"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" class="me-3"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>Change Password</a>
+            <a class="p-3" (click)="signoutEmployee()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-in-left me-3" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+                <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+              </svg>Signout</a>
+        </div>
+        <!-- body -->
+        <div class="col-sm-10 bg-white">
+            <!-- <app-emp-header></app-emp-header> -->
+            <app-profile *ngIf="profile"></app-profile>
+            <app-leave *ngIf="leave"></app-leave>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Upload profile <picture></picture></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="file" (change)="onselectFile($event)">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="updateImage(url)">Upload</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="changepass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="changepasswordForm" (ngSubmit)="changepassword()">
+           <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingpassword" placeholder="name@example.com" formControlName="password">
+                <label for="floatingInput">Password</label>
+                <div *ngIf="changepasswordForm.get('password')?.invalid && (changepasswordForm.get('password')?.dirty || changepasswordForm.get('faculty_name')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+            </div> 
+             <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingname" placeholder="name@example.com" formControlName="newpass">
+                <label for="floatingInput">New Password</label>
+                <div *ngIf="changepasswordForm.get('newpass')?.invalid && (changepasswordForm.get('newpass')?.dirty || changepasswordForm.get('newpass')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div>   
+               <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingname" placeholder="name@example.com" formControlName="confirmpass">
+                <label for="floatingInput">Confirm Password</label>
+                <div *ngIf="changepasswordForm.get('confirmpass')?.invalid && (changepasswordForm.get('confirmpass')?.dirty || changepasswordForm.get('confirmpass')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div> 
+              <button type="submit" class="btn btn-primary">Change</button>    
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editprofile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editProfileForm" (ngSubmit)="editprofile()">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatinname" placeholder="name@example.com" formControlName="name" [(ngModel)]="user.faculty_name" >
+            <label for="floatingInput">Name</label>
+            <div *ngIf="editProfileForm.get('name')?.invalid && (editProfileForm.get('name')?.dirty || editProfileForm.get('name')?.touched )" class="text-danger">
+                This is required field
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatinemail" placeholder="name@example.com" formControlName="email" [(ngModel)]="user.email">
+            <label for="floatingInput">Email</label>
+            <div *ngIf="editProfileForm.get('email')?.invalid && (editProfileForm.get('email')?.dirty || editProfileForm.get('email')?.touched )" class="text-danger">
+                This is required field
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatinmobile" placeholder="name@example.com" formControlName="mobile" [(ngModel)]="user.mobile">
+            <label for="floatingInput">Mobile</label>
+            <div *ngIf="editProfileForm.get('mobile')?.invalid && (editProfileForm.get('mobile')?.dirty || editProfileForm.get('mobile')?.touched )" class="text-danger">
+                This is required field
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="floatinbirth" placeholder="name@example.com" formControlName="birth" [(ngModel)]="user.birth_date">
+            <label for="floatingInput">Date of Birth</label>
+            <div *ngIf="editProfileForm.get('birth')?.invalid && (editProfileForm.get('birth')?.dirty || editProfileForm.get('birth')?.touched )" class="text-danger">
+                This is required field
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

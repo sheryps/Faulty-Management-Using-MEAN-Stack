@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "63ed0b86e83a9fda7fad7b8d"
+  },
+  "Name": "Angular",
+  "image": "https://th.bing.com/th/id/OIP.hb3VyCVv9j_i7Z3UwYyDBwAAAA?pid=ImgDet&w=300&h=290&rs=1"
+},{
+  "_id": {
+    "$oid": "63ed0be2e83a9fda7fad7b8e"
+  },
+  "Name": "React",
+  "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--qo_Wp38Z--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/e0nl7ziy1la7bpwj7rsp.png"
+},{
+  "_id": {
+    "$oid": "63ed0c00e83a9fda7fad7b8f"
+  },
+  "Name": "Nodejs",
+  "image": "https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png"
+},{
+  "_id": {
+    "$oid": "63ed0c1ce83a9fda7fad7b90"
+  },
+  "Name": "Javascript",
+  "image": "https://quocent.com/QUOCENT-CMS/userfiles/StaticBanner/1529923467_Javascript.png"
+},{
+  "_id": {
+    "$oid": "63ed0c33e83a9fda7fad7b91"
+  },
+  "Name": "JQuery",
+  "image": "https://logos-download.com/wp-content/uploads/2016/09/jQuery_logo.png"
+},{
+  "_id": {
+    "$oid": "63ed0c47e83a9fda7fad7b92"
+  },
+  "Name": "MERN STACK",
+  "image": "https://th.bing.com/th/id/OIP.Z6hTDv9NAwKYB5B18BvTFgHaDd?pid=ImgDet&rs=1"
+},{
+  "_id": {
+    "$oid": "63ed0c59e83a9fda7fad7b93"
+  },
+  "Name": "MEAN STACK",
+  "image": "https://www.weblineindia.com/wp-content/uploads/2016/12/mean-stack.jpg"
+},{
+  "_id": {
+    "$oid": "63ed0c6ee83a9fda7fad7b94"
+  },
+  "Name": "MEARN STACK",
+  "image": "https://secureservercdn.net/160.153.138.42/i3v.754.myftpupload.com/wp-content/uploads/2022/02/MEARN-1.png?time=1662356385"
+},{
+  "_id": {
+    "$oid": "63ed0c83e83a9fda7fad7b95"
+  },
+  "Name": "Python Django",
+  "image": "https://th.bing.com/th/id/OIP.hzWHW9KJi6t1UtDnhGDrGgHaEK?pid=ImgDet&rs=1"
+},{
+  "_id": {
+    "$oid": "63ed0c97e83a9fda7fad7b96"
+  },
+  "Name": "Python Flask",
+  "image": "https://sourcedexter.com/wp-content/uploads/2017/09/flask-python.png"
+},{
+  "_id": {
+    "$oid": "63ed0cabe83a9fda7fad7b97"
+  },
+  "Name": "Machine Learning",
+  "image": "https://devopsartisan.com/wp-content/uploads/2020/07/Machine-learning_DevOps-Artisan.jpg"
+},{
+  "_id": {
+    "$oid": "63ed0cbfe83a9fda7fad7b98"
+  },
+  "Name": "Data Science",
+  "image": "https://www.london.ac.uk/sites/default/files/styles/max_1300x1300/public/2018-03/data-science.jpg?itok=bTPDs5nf"
+},{
+  "_id": {
+    "$oid": "63ed0cd3e83a9fda7fad7b99"
+  },
+  "Name": "MongoDb",
+  "image": "https://th.bing.com/th/id/OIP.NQULz3JfegRxS0GUrshAxQHaHk?pid=ImgDet&rs=1"
+},{
+  "_id": {
+    "$oid": "63ed0ce7e83a9fda7fad7b9a"
+  },
+  "Name": "FireBase",
+  "image": "https://sujanbyanjankar.com.np/wp-content/uploads/2018/09/firebase_logo_shot.png"
+},{
+  "_id": {
+    "$oid": "63ed0d0fe83a9fda7fad7b9b"
+  },
+  "Name": "Mysql",
+  "image": "https://th.bing.com/th/id/R.6b47d7fec15d3e1a5de086ac1c808f6d?rik=IIkC39481Md3Bw&riu=http%3a%2f%2flogos-download.com%2fwp-content%2fuploads%2f2016%2f05%2fMySQL_logo_logotype.png&ehk=aWHquyoObU%2fXSsDiw7VKaqGdBCxP2cRjipdNUO5Q6us%3d&risl=&pid=ImgRaw&r=0"
+}]

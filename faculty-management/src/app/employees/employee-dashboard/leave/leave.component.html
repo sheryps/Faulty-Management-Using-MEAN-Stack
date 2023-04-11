@@ -1,0 +1,70 @@
+
+<div class="container-fluid">
+    <!-- first row -->
+    <div class="row text-center text-success mt-3">
+        <div class="col-md-4">
+            <a href="" style="text-decoration:none;" class="text-success" data-bs-toggle="modal" data-bs-target="#skillModal" >
+                <div class="card shadow bg-warning text-white">
+                    <div class="card-body">
+                        <h2>Add Skills</h2>
+                        <h5>+</h5>
+                    </div>
+                </div></a>
+
+        </div>
+    </div>    
+    <h3 class="text-danger text-center mt-5">List of Skills</h3>
+    <div class="row text-center text-success mt-5">
+        <div class="col-md-4 mb-5" *ngFor="let skill of userskills">
+            <div class="card shadow bg-info text-white">
+                <div class="card-body">
+                    <h3 class="text-dark">{{skill.Skill}}</h3>
+                    <h5>{{skill.Level}}</h5>
+                    <img [src]="skill.Image" alt="" [width]="70" [height]="50">
+                    <h5></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+
+<!-- Modal -->
+<div class="modal fade" id="skillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Skills</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form >
+          <div class="form-floating mb-3">
+            <select  class="form-control" id="floatingskills" name="skills"  (change)="skill($event)">
+              <option *ngFor="let skill of allskills" value="{{skill.Name}}">{{skill.Name}}</option>
+            </select>
+              <label for="floatingInput">Skills</label>
+              <!-- <div *ngIf="facultyDetailsForm.get('faculty_name')?.invalid && (facultyDetailsForm.get('faculty_name')?.dirty || facultyDetailsForm.get('faculty_name')?.touched )" class="text-danger">
+                  This is required field
+              </div> -->
+            </div>            
+            <div class="form-floating mb-3">
+              <select  class="form-control" id="floatinglevel" placeholder="name@example.com" name="level" (click)="level($event)">
+                <option value="Begineer">Begineer</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Expert">Expert</option>
+              </select>
+              <label for="floatingInput">Skill Level</label>
+              <!-- <div *ngIf="facultyDetailsForm.get('designation')?.invalid && (facultyDetailsForm.get('designation')?.dirty || facultyDetailsForm.get('designation')?.touched )" class="text-danger">
+                  This is required field
+              </div> -->
+         </div>  
+         <button type="button" class="btn btn-primary" (click)="skillsUpdate()">Add</button>
+         </form>
+      </div>
+    </div>
+  </div>
+</div>

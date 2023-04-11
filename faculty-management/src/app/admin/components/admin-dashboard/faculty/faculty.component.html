@@ -1,0 +1,241 @@
+
+<div class="container-fluid">
+    <!-- first row -->
+    <div class="row text-center text-success mt-3">
+        <div class="col-md-4">
+            <a href="" style="text-decoration:none;" class="text-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div class="card shadow bg-info text-white">
+                    <div class="card-body">
+                        <h5>Add Employee</h5>
+                        <h5>+</h5>
+                    </div>
+                </div></a>
+
+        </div>
+        <div class="col-md-4">
+            <a href="" style="text-decoration:none;" class="text-success">
+            <div class="card shadow bg-info text-white">
+                <div class="card-body">
+                    <h5>Total Employees</h5>
+                    <h5>{{len}}</h5>
+                </div>
+            </div></a>
+        </div>
+    </div>
+
+    <!-- second row -->
+    <div class="row pe-2 mt-3">
+      <div class="col-sm-12 text-center">
+        <div>
+          <div class="card-shadow">
+            <div class="card-body">
+              <h4 class="text-primary">
+                List of Employees
+              </h4>
+              <div class="table table-hover mt-3 table-striped">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">Image</th>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="">
+                  <tr *ngFor="let faculty of allFaculties |filter:searchTerm:'designation' ">
+                    
+                    <td>
+                      <img class="rounded-circle" [src]="faculty.image" alt="" width="50px" height="50px">
+                    </td>
+                    <td>{{faculty.faculty_number}}</td>
+                    <td>{{faculty.faculty_name}}</td>
+                    <td>{{faculty.email}}</td>
+                    <td>{{faculty.mobile}}</td>
+                    <td>{{faculty.designation}}</td>
+                    <td>{{faculty.salary}}</td>
+                    <td>
+                      <button type="button" class="btn btn-outline-secondary me-2" (click)="viewFaculty(faculty)" data-bs-toggle="modal" data-bs-target="#viewModal">View</button>
+                      <button type="button" class="btn btn-outline-primary me-2" (click)="editFaculty(faculty)" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>
+                      <button type="button" class="btn btn-outline-danger" (click)="deleteFaculty(faculty.faculty_number)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- add faculty modal -->  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-success" id="exampleModalLabel">Add Employee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="facultyDetailsForm" (ngSubmit)="addNewFaculty()">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingname" placeholder="name@example.com" formControlName="faculty_name">
+                <label for="floatingInput">Full Name</label>
+                <div *ngIf="facultyDetailsForm.get('faculty_name')?.invalid && (facultyDetailsForm.get('faculty_name')?.dirty || facultyDetailsForm.get('faculty_name')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div>            
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingemail" placeholder="name@example.com" formControlName="email">
+                <label for="floatingInput">Email</label>
+                <div *ngIf="facultyDetailsForm.get('email')?.invalid && (facultyDetailsForm.get('email')?.dirty || facultyDetailsForm.get('email')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <select  class="form-control" id="floatingdesignation" placeholder="name@example.com" formControlName="designation">
+                  <option value="Junior Developer">Junior Developer</option>
+                  <option value="Senior Developer">Senior Developer</option>
+                  <option value="Software Specialist">Software Specialist</option>
+                  <option value="Junior Angular Developer">Junior Angular Developer</option>
+                </select>
+                <label for="floatingInput">Designation</label>
+                <div *ngIf="facultyDetailsForm.get('designation')?.invalid && (facultyDetailsForm.get('designation')?.dirty || facultyDetailsForm.get('designation')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingsalary" placeholder="name@example.com" formControlName="salary">
+                <label for="floatingInput">salary</label>
+                <div *ngIf="facultyDetailsForm.get('salary')?.invalid && (facultyDetailsForm.get('salary')?.dirty || facultyDetailsForm.get('salary')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingmobile" placeholder="name@example.com" formControlName="mobile">
+                <label for="floatingInput">Mobile</label>
+                <div *ngIf="facultyDetailsForm.get('mobile')?.invalid && (facultyDetailsForm.get('mobile')?.dirty || facultyDetailsForm.get('mobile')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingadhar" placeholder="name@example.com" formControlName="adharcard_number">
+                <label for="floatingInput">Aadhar Number </label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingjoin" placeholder="name@example.com" formControlName="joining_year">
+                <label for="floatingInput">Joining Year </label>
+                <div *ngIf="facultyDetailsForm.get('joining_year')?.invalid && (facultyDetailsForm.get('joining_year')?.dirty || facultyDetailsForm.get('joining_year')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="floatingbirth" placeholder="name@example.com" formControlName="birth_date">
+                <label for="floatingInput">Birth Date</label>
+                <div *ngIf="facultyDetailsForm.get('birth_date')?.invalid && (facultyDetailsForm.get('birth_date')?.dirty || facultyDetailsForm.get('birth_date')?.touched )" class="text-danger">
+                    This is required field
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary mt-2">Add Faculty </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- view faculty -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-center text-success" id="exampleModalLabel">Employee Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <td scope="row"><b>Employee Number</b></td>
+              <td>{{facultyDetailsForm.get('faculty_number')?.value}}</td>
+            </tr>
+            <tr>
+              <td scope="row"><b>Employee Name</b></td>
+              <td>{{facultyDetailsForm.get('faculty_name')?.value}}</td>
+            </tr>
+            <tr>
+              <td scope="row"><b>Employee Email</b></td>
+              <td>{{facultyDetailsForm.get('email')?.value}}</td>
+            </tr>
+            <tr>
+              <td scope="row"><b>Designation</b></td>
+              <td>{{facultyDetailsForm.get('designation')?.value}}</td>
+            </tr>
+            <tr>
+              <td scope="row"><b>Mobile</b></td>
+              <td>{{facultyDetailsForm.get('mobile')?.value}}</td>
+            </tr>
+            <tr>
+              <td scope="row"><b>Joining Year</b></td>
+              <td>{{facultyDetailsForm.get('joining_year')?.value}}</td>
+            </tr>
+            <tr>
+              <td scope="row"><b>Date of Birth</b></td>
+              <td>{{facultyDetailsForm.get('birth_date')?.value}}</td>
+            </tr>
+            <tr>
+              <td scope="row"><b>Aadhar Number</b></td>
+              <td>{{facultyDetailsForm.get('adharcard_number')?.value}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- edit faculty -->
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Faculty</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="facultyDetailsForm" (ngSubmit)="updateFaculty()">
+            <div class="form-floating mb-3">
+              <select  class="form-control" id="floatingdesignation" placeholder="name@example.com" formControlName="designation" value="facultyDetailsForm.get('designation').value">
+                <option value="Junior Developer">Junior Developer</option>
+                <option value="Senior Developer">Senior Developer</option>
+                <option value="Software Specialist">Software Specialist</option>
+                <option value="Junior Angular Developer">Junior Angular Developer</option>
+              </select>
+              <label for="floatingInput">Designation</label>
+              <div *ngIf="facultyDetailsForm.get('designation')?.invalid && (facultyDetailsForm.get('designation')?.dirty || facultyDetailsForm.get('designation')?.touched )" class="text-danger">
+                  This is required field
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="floatinsalary" placeholder="name@example.com" formControlName="salary" value="facultyDetailsForm.get('salary').value">
+              <label for="floatingInput">Salary</label>
+              <div *ngIf="facultyDetailsForm.get('salary')?.invalid && (facultyDetailsForm.get('salary')?.dirty || facultyDetailsForm.get('salary')?.touched )" class="text-danger">
+                  This is required field
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Update </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

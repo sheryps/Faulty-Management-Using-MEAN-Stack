@@ -1,0 +1,37 @@
+<div class="container-fluid m-0 p-0 " style="height:100vh;overflow: hidden !important;">
+    <div class="row my-5">
+        <div class="col ps-5">
+            <img src="" alt="">
+
+        </div>
+        <div class="col my-5 me-5" style="height: 400px;">
+            <div class="card shadow p-4" style="height:400px !important">
+                <form [formGroup]="adminLoginData" (ngSubmit)="adminLogin()">
+                    <h3 class="text-center">Admin Login</h3>
+                    <div class="my-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username">
+                        <div *ngIf="adminLoginData.get('username')?.invalid && (adminLoginData.get('username')?.dirty || adminLoginData.get('username')?.touched )" class="text-danger">
+                            This is required field
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                      <div *ngIf="adminLoginData.get('password')?.invalid && (adminLoginData.get('password')?.dirty || adminLoginData.get('password')?.touched )" class="text-danger">
+                        This is required field
+                    </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success me-2 ms-auto" [disabled]="adminLoginData.invalid">Submit</button>
+                  </form><br>
+                  <div id="formfooter">
+                    <a class="underlineHover text-danger" routerLink="/">Are u Employee?</a>
+                  </div>
+                  
+            </div>
+            
+        </div>
+    </div>
+    <div class="col ps-5">
+    </div>
+</div>
